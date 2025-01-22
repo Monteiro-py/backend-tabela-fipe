@@ -1,0 +1,11 @@
+# Usar uma imagem base com Java
+FROM openjdk:11-jre-slim
+
+# Diretório de trabalho
+WORKDIR /app
+
+# Copiar o arquivo JAR para o container
+COPY target/demo-0.0.1-SNAPSHOT.jar /app/demo-0.0.1-SNAPSHOT.jar
+
+# Executar a aplicação
+CMD ["java", "-jar", "demo-0.0.1-SNAPSHOT.jar"]
